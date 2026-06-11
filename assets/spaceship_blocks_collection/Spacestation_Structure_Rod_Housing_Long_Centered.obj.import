@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b1jtmj1fkg5ly"
+path="res://.godot/imported/Spacestation_Structure_Rod_Housing_Long_Centered.obj-40671da5ed2bbc2fadd4001316d0e9db.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Spacestation_Structure_Rod_Housing_Long_Centered.obj-40671da5ed2bbc2fadd4001316d0e9db.mesh"]
+
+source_file="res://assets/spaceship_blocks_collection/Spacestation_Structure_Rod_Housing_Long_Centered.obj"
+dest_files=["res://.godot/imported/Spacestation_Structure_Rod_Housing_Long_Centered.obj-40671da5ed2bbc2fadd4001316d0e9db.mesh", "res://.godot/imported/Spacestation_Structure_Rod_Housing_Long_Centered.obj-40671da5ed2bbc2fadd4001316d0e9db.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://fobiayt0t7r3"]
+
+[ext_resource type="Texture2D" uid="uid://cwyt87ppv4urf" path="res://beautiful-view-stars-night-sky.jpg" id="1_6tona"]
+[ext_resource type="PackedScene" uid="uid://bqmb454yynntw" path="res://assets/scenes/spaceShip.tscn" id="2_62r41"]
+[ext_resource type="PackedScene" uid="uid://dqflopox7uhp7" path="res://assets/scenes/player.tscn" id="3_8pqgr"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jqrx6"]
+panorama = ExtResource("1_6tona")
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_jqrx6"]
+sky_material = SubResource("PanoramaSkyMaterial_jqrx6")
+radiance_size = 6
+
+[sub_resource type="Environment" id="Environment_1a4r0"]
+background_mode = 2
+background_energy_multiplier = 0.5
+sky = SubResource("Sky_jqrx6")
+ambient_light_energy = 0.5
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1a4r0")
+
+[node name="Node3D" parent="." instance=ExtResource("2_62r41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2073933, 0, 1.2288618)
+
+[node name="Node3D4" parent="." instance=ExtResource("2_62r41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2073933, 8.936145, 1.2288618)
+
+[node name="Node3D5" parent="." instance=ExtResource("2_62r41")]
+transform = Transform3D(0.0010170342, 1.0012145, 0, -0.45524007, 0.0022367744, 0, 0, 0, 1, 8.649284, 4.0249043, 1.2288618)
+
+[node name="Node3D2" parent="." instance=ExtResource("2_62r41")]
+transform = Transform3D(1, 0, 0, 0, -0.0024761204, -0.62850803, 0, 0.9990762, -0.0015577007, -1.2073933, 4.497888, 9.835593)
+
+[node name="Node3D3" parent="." instance=ExtResource("2_62r41")]
+transform = Transform3D(1, 0, 0, 0, -0.0024761204, -0.62850803, 0, 0.9990762, -0.0015577007, -1.2073933, 4.497888, -5.7133293)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("3_8pqgr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8317543, 2.657023, 1.4528937)
