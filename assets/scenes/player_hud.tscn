@@ -1,9 +1,93 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhoagslytnjee"]
+[gd_scene load_steps=3 format=3 uid="uid://dhoagslytnjee"]
 
-[ext_resource type="Script" uid="uid://b4mcjr2jpjpoc" path="res://assets/scenes/player_hud.gd" id="1_beunc"]
+[ext_resource type="Script" uid="uid://b4mcjr2jpjpoc" path="res://assets/scripts/player_hud.gd" id="1_beunc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_beunc"]
+bg_color = Color(0.43519226, 0.4351923, 0.43519217, 1)
 
 [node name="PlayerHUD" type="CanvasLayer"]
 script = ExtResource("1_beunc")
+
+[node name="FuelBar" type="ProgressBar" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -51.0
+offset_right = 363.0
+grow_vertical = 0
+value = 100.0
+
+[node name="FuelLabel" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -96.0
+offset_right = 359.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Jetpack Fuel Remaining"
+horizontal_alignment = 1
+
+[node name="OxygenLabel" type="Label" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -349.0
+offset_top = -96.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 37
+text = "Oxygen Remaining"
+horizontal_alignment = 1
+
+[node name="OxygenBar" type="ProgressBar" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -343.0
+offset_top = -38.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/background = SubResource("StyleBoxFlat_beunc")
+value = 100.0
+
+[node name="GrabLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = 9.0
+offset_right = 125.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+
+[node name="PromptLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -68.5
+offset_right = 124.0
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 48
+text = "
+TEST"
+horizontal_alignment = 1
 
 [node name="Crosshair" type="Label" parent="."]
 anchors_preset = 8
@@ -11,35 +95,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -26.0
-offset_top = -28.0
-offset_right = 29.0
-offset_bottom = 27.0
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="FuelBar" type="ProgressBar" parent="."]
-offset_left = -1.0
-offset_top = 618.0
-offset_right = 177.0
-offset_bottom = 645.0
-
-[node name="FuelLabel" type="Label" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -2.0
-offset_top = 594.0
-offset_right = -973.0
-offset_bottom = -31.0
-grow_horizontal = 2
-grow_vertical = 2
-horizontal_alignment = 1
-
-[node name="ModeLabel" type="Label" parent="."]
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1004.0
-offset_top = 2.0
-offset_bottom = -623.0
+scale = Vector2(1.5, 1.5)
+text = "+"

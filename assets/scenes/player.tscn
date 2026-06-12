@@ -1,18 +1,31 @@
 [gd_scene load_steps=4 format=3 uid="uid://dqflopox7uhp7"]
 
-[ext_resource type="Script" uid="uid://db6ann2venbvq" path="res://assets/scenes/player.gd" id="1_rwm0n"]
+[ext_resource type="Script" uid="uid://db6ann2venbvq" path="res://assets/scripts/player.gd" id="1_rwm0n"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ysycn"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rwm0n"]
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="CharacterBody3D" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_rwm0n")
 
 [node name="Head" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5577282, -0.45414874)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5577282, -0.5030932)
+
+[node name="GrabRay" type="RayCast3D" parent="Head/Camera3D"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -0.001134439, -0.99999934, 0, 0.99999934, -0.001134439, 0, 0, -0.052356243)
+
+[node name="HeadLamp" type="SpotLight3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.13042402)
+light_energy = 4.0
+spot_range = 42.578712
+spot_angle = 72.640045
+
+[node name="InteractRay" type="RayCast3D" parent="Head/Camera3D"]
+transform = Transform3D(10, 0, 0, 0, -0.0072604935, -9.999983, 0, 3.9999933, -0.018151233, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_ysycn")
